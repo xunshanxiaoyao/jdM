@@ -106,6 +106,9 @@ body {
 .jd_banner ul:nth-child(2) li:first-child{
 	margin-left: 0;
 }
+.jd_banner ul:nth-child(2) li.now {
+	background: #fff;
+}
 /* 导航栏 */
 .jd_nav {
 	background: #fff;

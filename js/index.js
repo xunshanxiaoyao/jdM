@@ -101,5 +101,28 @@ function banner(){
 			setTranslateX(-index * width);
 		}
 		// 设置当前的点
+		setCurrPoint();
 	});
+
+	// 2，点也会对应的做改变
+	var setCurrPoint = function(){
+        /*点索引0-7*/
+        /*索引的值 1-8*/
+        var pointIndex = index;
+
+        if(pointIndex >= 9){
+            pointIndex = 1;
+        }else if(index <= 0){
+            pointIndex = 8;
+        }
+
+        pointIndex = pointIndex -1;
+
+        for(var i = 0 ; i < points.length ; i ++){
+            points[i].className = " ";
+        }
+
+        /*加上class*/
+        points[pointIndex].className = "now";
+    }
 }
