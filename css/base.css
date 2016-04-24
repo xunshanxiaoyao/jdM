@@ -1,0 +1,62 @@
+/*公用的css*/
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+    /*去除在所有的浏览器当中点击过后有一个高亮的效果*/
+    -webkit-tap-highlight-color: transparent;/*设置透明*/
+    tap-highlight-color: transparent;
+    /*需要设置所有的元素宽度以边框开始计算*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: "MicroSoft YaHei",sans-serif;/*如果没有微软雅黑 就使用移动端默认的字体*/
+    font-size: 14px;
+    color: #333;
+}
+ol,ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    color: #333;
+}
+
+/*清楚移动端浏览器对表单的默认样式*/
+input[type="search"],input[type="tel"],textarea{
+    border: 0;
+    resize: none;
+    outline: none;
+    /*清除移动浏览默认的样式,表单的立体阴影一类*/
+    -webkit-appearance: none;
+}
+
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+
+/*清除浮动*/
+.clearfix::after,
+.clearfix::before{
+    content: ".";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+
+    clear: both;
+}
+
+/*通用图标*/
+[class^="icon_"]{
+    background: url("../img/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
