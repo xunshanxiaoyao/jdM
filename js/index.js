@@ -1,6 +1,7 @@
 window.onload=function(){
 	search();
 	banner();
+	secondkill();
 };
 
 // 搜索
@@ -125,4 +126,91 @@ function banner(){
         /*加上class*/
         points[pointIndex].className = "now";
     }
+    // 3，跟随手指做滑动
+    var startX = 0; // 刚刚触摸屏幕的时候
+    var moveX = 0; //滑动的时候X的坐标
+    var distanceX = 0; //坐标改变的值
+   	var isMove = false;
+
+   	imgBox.addEventListener('touchstart',function(e){
+   		// 记录起始坐标
+   		startX = e.touches[0].clientX;
+   	});
+   	imgBox.addEventListener('touchmove',function(e){
+   		// 清除定时器
+   		clearInterval(timer);
+   		// 滑动的时候的X坐标
+   		moveX = e.touches[0].clientX;
+   		distanceX = moveX - startX;
+   		// 恢复动画
+   		removeTransition();
+   		setTranslateX(-index * width + distanceX);
+   		isMove = true;
+   	});
+
+   	// 如果浏览器模拟imgBox 监听touchend 在多次滑动的时候会丢失touchend，最终冒泡到window上
+   	window.addEventListener('touchend',function(){
+   		// 4，滑动不足三分之一的时候需要吸附回去
+	// 5，超过三分之一滚动一张
+		if(Math.abs(distanceX) > 1/3 * width && isMove){
+			if(distanceX > 0){
+				index --;
+			}else {
+				index ++;
+			}
+			addTransition();
+			setTranslateX(-index * width);
+		}else {
+			addTransition();
+			setTranslateX(-index * width);
+		}
+		// 重新加上定时器
+		clearInterval(timer);
+		timer = setInterval(function(){
+			index++;
+			addTransition();
+
+			setTranslateX(-index * width);
+		}, 2000);
+
+		// 重置初始化的值
+		startX = 0;
+        moveX = 0;
+        distanceX = 0;
+        isMove = false;
+   	});
+   	// zepto touch 没有提供 move
+}
+
+// 倒计时
+function secondkill(){
+	// 需要一个时间
+	// 倒计时
+	// 时间盒子
+	var time = document.getElementsByClassName('sk_time')[0];
+	// 找到所有的子盒子
+	var blackBox = time.getElementsByTagName('span');
+
+	// 时间
+	var timer = 8 * 60 * 60;
+
+	var interval = setInterval(function(){
+		if (timer <= 0 ) {
+			clearInterval(interval);
+		}
+		timer --;
+		// 格式化
+		var h = Math.floor(timer/(60*60));
+		var m = Math.floor((timer%(60*60)/60));
+		var s = timer % 60;
+
+		blackBox[0].innerHTML = Math.floor(h/10);
+		blackBox[1].innerHTML = h%10;
+
+		blackBox[3].innerHTML = Math.floor(m/10);
+		blackBox[4].innerHTML = m % 10;
+
+		blackBox[6].innerHTML = Math.floor(s/10);
+		blackBox[7].innerHTML = s % 10;
+	}, 1000);
 }
