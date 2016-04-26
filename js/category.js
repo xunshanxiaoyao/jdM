@@ -88,5 +88,30 @@ function leftSwipe(){
 		distanceY = 0;
 	});
 
-	
+	var lisDom = childBox.getElementsByTagName('li');
+	// 点击
+	lyb.tap(childBox,function(e){
+		var liDom = e.target.parentNode;
+		// 改变样式
+
+		for(var i = 0 ; i < lisDom.length; i++){
+			lisDom[i].className = '';
+			// 给所有的li加上索引
+			lisDom[i].index = i;
+		}
+		liDom.className = 'now';
+		//需要计算定位
+		var position = -liDom.index * 50;
+		//在改变的时候需要重新记录当前的定位
+		if(position <= maxPosition && position > minPosition){
+			currY = position;
+			addTransition();
+			setTranslateY(currY);
+		}else{
+			currY = minPosition;
+			addTransition();
+			setTranslateY(currY);
+		}
+
+	});
 }
