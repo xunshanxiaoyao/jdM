@@ -1,0 +1,84 @@
+body {
+	background: #f5f5f5;
+}
+
+.jd_topBar {
+	position: relative;
+}
+.jd_safeTip {
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	background: #fff;
+}
+.jd_safeTip p {
+	display: inline-block;
+	position: relative;
+	padding-left: 23px;
+	font-size: 12px;
+}
+.jd_safeTip p:before {
+	position: absolute;
+	left: 0;
+	top: 7px;
+	width: 18px;
+	height: 18px;
+	content: '';
+	background: url('../img/safe_icon.png') no-repeat;
+	background-size: 18px 18px;
+}
+
+/* 订单 */
+.jd_order {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #fff;
+	margin-top: 10px;
+	min-height: 200px;
+}
+
+/* 公用复选框 */
+.jd_check_box {
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url('../img/shop-icon.png') no-repeat;
+	background-size: 50px 100px;
+}
+.jd_check_box[checked]{
+	background-position: -25px 0 ;
+}
+
+.shop_check .jd_check_box {
+	margin-top: 7px;
+	margin-left: 10px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/* 店铺内容 */
+.jd_order_shop {
+	position: relative;
+}
+.shop_con {
+	padding-left: 40px;
+	line-height: 34px;
+	width: 100%;
+}
+.shop_con .shop_con_logo {
+	float: left;
+	margin-top: 10px;
+}
+
+.shop_con .shop_con_name {
+	float: left;
+	font-size: 15px;
+}
+.shop_con .shop_con_tip {
+	float: right;
+	color: #d8505c;
+	font-size: 12px;
+	margin-right: 10px;
+}
