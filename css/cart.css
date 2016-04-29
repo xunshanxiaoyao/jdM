@@ -82,3 +82,164 @@ body {
 	font-size: 12px;
 	margin-right: 10px;
 }
+/* 商品盒子 */
+.product {
+	position: relative;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+}
+.product .product_check {
+	position: absolute;
+	width: 40px;
+}
+.product .jd_check_box {
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.product .product_box {
+	width: 100%;
+	padding-left: 40px;
+	height: 90px;
+	padding-bottom: 10px;
+}
+.product .product_box .product_img {
+	width: 80px;
+	height: 80px;
+	float: left;
+}
+.product .product_box .product_img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.product .product_box .product_info {
+	overflow: hidden;
+	height: 80px;
+	padding: 0 10px;
+}
+
+/* 商品信息 */
+.product_info .product_info_name {
+	height: 30px;
+	line-height: 15px;
+	font-size: 13px;
+	overflow: hidden;
+	display: block;
+}
+
+.product_info .product_info_price {
+	color: #d8505c;
+	font-size: 14px;
+	margin-top: 3px;
+}
+.product_info .product_info_option{
+	margin-top: 3px;
+}
+/* 数量选择 */
+.changeNum {
+
+}
+
+.changeNum span:first-child {
+	border: 1px solid #ccc;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	font-size: 12px;
+	line-height: 24px;
+	text-align: center;
+	height: 24px;
+	width: 32px;
+	float: left;
+}
+
+.changeNum input {
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	height: 24px;
+	width: 32px;
+	text-align: center;
+	float: left;
+}
+.changeNum span:last-child {
+	border: 1px solid #ccc;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	font-size: 12px;
+	line-height: 24px;
+	text-align: center;
+	height: 24px;
+	width: 32px;
+	float: left;
+}
+/* 删除篓子 */
+.delete_up {
+	display: block;
+	width: 20px;
+	height: 5px;
+	background: url('../img/delete_up.png') no-repeat;
+	background-size: 20px 5px;
+	margin-left: -1px;
+}
+.delete_down {
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url('../img/delete_down.png') no-repeat;
+	background-size: 18px 18px;
+	margin-top: -2px;
+}
+
+/* 弹出层 */
+.jd_popWin {
+	background: rgba(0,0,0,.6);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	display: block;
+}
+.jd_popWin .jd_popWin_box {
+	width: 85%;
+	margin: 0 auto;
+	background: #fff;
+	padding: 10px;
+	border-radius: 4px;
+	margin-top: 200px;
+}
+.jd_popWin .jd_popWin_box .tit {
+	font-size: 18px;
+	text-align: center;
+	line-height: 75px;
+	border-bottom: 1px solid #ccc;
+}
+.jd_popWin .jd_popWin_box .con {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.jd_popWin .jd_popWin_box .con .cancel {
+	width: 45%;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 14px;
+	margin-right: 10%;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	float: left;
+}
+
+.jd_popWin .jd_popWin_box .con .submit {
+	width: 45%;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 14px;
+	background: #d8505c;
+	border-radius: 4px;
+	float: left;
+	color: #fff;
+}
