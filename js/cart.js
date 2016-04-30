@@ -35,29 +35,31 @@ function deleteFuc(){
 			deleteUp.style.webkitTransformOrigin='0 5px';
 
 
+
+			cancel.onclick=function(){
+				// 关闭
+				popWin.parentNode.style.display='none';
+				if(deleteUp){
+					deleteUp.style.transform='none';
+					deleteUp.style.webkitTransform='none';
+				}
+			};
+			var product = this.parentNode.parentNode.parentNode.parentNode;
+			console.log(product);
+			submit.onclick=function(){
+				popWin.parentNode.style.display='none';
+				if(deleteUp){
+					deleteUp.style.transform='none';
+					deleteUp.style.webkitTransform='none';
+				}
+				
+				jdOrderCon.removeChild(product);
+				
+			}
+
 		}
 	};
-	cancel.onclick=function(){
-		// 关闭
-		popWin.parentNode.style.display='none';
-		if(deleteUp){
-			deleteUp.style.transform='none';
-			deleteUp.style.webkitTransform='none';
-		}
-	};
-	submit.onclick=function(){
-		popWin.parentNode.style.display='none';
-		if(deleteUp){
-			deleteUp.style.transform='none';
-			deleteUp.style.webkitTransform='none';
-		}
-		var product = jdOrderCon.querySelector('.product');
-		
-		console.log(product);
-		
-		jdOrderCon.removeChild(product);
-		
-	}
+	
 
 
 }
