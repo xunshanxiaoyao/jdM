@@ -243,3 +243,34 @@ body {
 	float: left;
 	color: #fff;
 }
+/* 动画 */
+@keyframes bounce {
+	0%{
+		transform: translateY(-3000px);
+		-webkit-transform: translateY(-3000px);
+		opacity: 0;
+	}
+	60%{
+		transform: translateY(30px);
+		-webkit-transform: translateY(30px);
+		opacity: 1;
+	}
+	75%{
+		transform: translateY(-15px);
+		-webkit-transform: translateY(-15px);
+	}
+	90%{
+		transform:translateY(5px);
+		-webkit-transform: translateY(5px);
+	}
+	100%{
+		opacity: 1;
+		transform: none;
+		-webkit-transform: none;
+	}
+}
+
+.jd_popWin_box.bounce {
+	animation: bounce 1s ease;
+	
+}
